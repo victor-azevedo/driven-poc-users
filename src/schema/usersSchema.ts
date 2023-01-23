@@ -11,3 +11,7 @@ export const userSchema: ObjectSchema = Joi.object({
   email: Joi.string().trim().email().required(),
   phone: Joi.string().trim().min(10).max(11).required(),
 });
+
+export const userParamsQuerySchema: ObjectSchema = Joi.object({
+  bornAfter: Joi.date().format("YYYY-MM-DD"),
+});

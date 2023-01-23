@@ -1,13 +1,23 @@
-import { insertUser } from "../controllers/usersController";
-import { userValidation } from "../middlewares/usersMiddleware";
+import {
+  insertUser,
+  getUsers,
+  getUserById,
+  deleteUserById,
+  updateUser,
+} from "../controllers/usersController";
+import {
+  userQueryValidation,
+  userValidation,
+} from "../middlewares/usersMiddleware";
 import { Router } from "express";
 
 const router = Router();
 
 router.post("/", userValidation, insertUser);
-router.get("/");
-router.get("/:id");
-router.delete("/:id");
-router.patch("/:id");
+router.use(userQueryValidation);
+router.put("/:id", userValidation, updateUser);
+router.get("/", getUsers);
+router.get("/:id", getUserById);
+router.delete("/:id", deleteUserById);
 
 export default router;
