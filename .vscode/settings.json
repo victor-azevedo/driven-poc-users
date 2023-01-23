@@ -1,0 +1,9 @@
+{
+  "workbench.colorCustomizations": {
+    "activityBar.background": "#3F214B",
+    "titleBar.activeBackground": "#592E69",
+    "titleBar.activeForeground": "#FDFBFD"
+  },
+  "autoenv-filename": ".env.example",
+  "dotenv.enableAutocloaking": false
+}
