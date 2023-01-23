@@ -14,10 +14,9 @@ import { Router } from "express";
 const router = Router();
 
 router.post("/", userValidation, insertUser);
-router.use(userQueryValidation);
-router.put("/:id", userValidation, updateUser);
-router.get("/", getUsers);
+router.get("/", userQueryValidation, getUsers);
 router.get("/:id", getUserById);
+router.put("/:id", userValidation, updateUser);
 router.delete("/:id", deleteUserById);
 
 export default router;
